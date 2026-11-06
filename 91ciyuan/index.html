@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91次元官网-二次元资源入口_91次元官网首页导航与内容聚合</title>
+<meta name="description" content="91次元官网首页，聚合二次元资源入口、内容分区导航与常见问题说明，帮助访客快速找到91次元官网的栏目结构与使用路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a2b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%235ad1e6' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff7a9c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d1220;
+  --bg-soft:#141b2e;
+  --card:#182138;
+  --line:rgba(120,160,220,.16);
+  --text:#e9eef8;
+  --muted:#9aa8c2;
+  --cyan:#5ad1e6;
+  --pink:#ff7a9c;
+  --amber:#ffc37a;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(90,209,230,.13), transparent 60%),
+    radial-gradient(700px 420px at 5% 0%, rgba(255,122,156,.10), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* Header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(13,18,32,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,#1d2a45,#101728);
+  border:1px solid rgba(90,209,230,.35);
+  display:grid;place-items:center;
+  box-shadow:0 0 18px rgba(90,209,230,.18);
+}
+.brand-name{font-size:17px;font-weight:700;letter-spacing:.5px;}
+.brand-name span{color:var(--cyan);}
+nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+nav.main a{
+  font-size:14px;color:var(--muted);padding:7px 12px;border-radius:9px;
+  transition:.2s;white-space:nowrap;
+}
+nav.main a:hover{color:var(--text);background:rgba(90,209,230,.10);}
+.nav-cta{
+  font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:10px;
+  color:#08121c;background:linear-gradient(120deg,var(--cyan),#7fe4c8);
+  box-shadow:0 6px 18px rgba(90,209,230,.25);
+}
+
+/* Hero */
+.hero{padding:64px 0 44px;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.4px;color:var(--cyan);
+  border:1px solid rgba(90,209,230,.3);border-radius:999px;
+  padding:5px 13px;margin-bottom:20px;background:rgba(90,209,230,.06);
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);}
+h1{
+  font-size:clamp(30px,4.6vw,50px);
+  line-height:1.22;margin:0 0 18px;letter-spacing:1px;font-weight:800;
+  background:linear-gradient(100deg,#ffffff 20%,#9fe8f5 60%,#ffb3c6 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{color:var(--muted);font-size:16px;max-width:36em;margin:0 0 26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:12px;font-size:14.5px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{color:#07121b;background:linear-gradient(120deg,var(--cyan),#8ef0d3);box-shadow:0 8px 22px rgba(90,209,230,.28);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-ghost{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{border-color:rgba(90,209,230,.45);color:var(--cyan);}
+.hero-art{
+  position:relative;border-radius:22px;overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(160deg,#16203a,#0e1526);
+  padding:22px;
+}
+.hero-art svg{width:100%;height:auto;}
+.stat-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.stat{
+  flex:1 1 100px;background:rgba(90,209,230,.07);
+  border:1px solid rgba(90,209,230,.18);border-radius:12px;
+  padding:10px 12px;text-align:center;
+}
+.stat b{display:block;font-size:18px;color:var(--cyan);}
+.stat span{font-size:12px;color:var(--muted);}
+
+/* Sections */
+section{padding:46px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-tag{font-size:12.5px;letter-spacing:1.6px;color:var(--pink);font-weight:600;}
+.sec-head h2{font-size:clamp(21px,2.6vw,28px);margin:6px 0 8px;font-weight:750;letter-spacing:.5px;}
+.sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:44em;}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:linear-gradient(170deg,var(--card),#131a2c);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.25s;position:relative;overflow:hidden;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(90,209,230,.4);box-shadow:0 14px 34px rgba(0,0,0,.35);}
+.card-ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(90,209,230,.10);border:1px solid rgba(90,209,230,.22);margin-bottom:14px;
+}
+.card h3{font-size:16.5px;margin:0 0 8px;font-weight:700;}
+.card p{margin:0;font-size:14px;color:var(--muted);line-height:1.72;}
+
+/* Two column */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start;}
+.panel{
+  background:linear-gradient(170deg,var(--card),#121a2b);
+  border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+}
+.panel h3{font-size:17px;margin:0 0 14px;}
+.timeline{list-style:none;margin:0;padding:0;}
+.timeline li{position:relative;padding:0 0 18px 26px;border-left:1px dashed rgba(120,160,220,.25);}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0;}
+.timeline li::before{
+  content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 10px rgba(90,209,230,.8);
+}
+.timeline b{display:block;font-size:14.5px;margin-bottom:4px;}
+.timeline span{font-size:13.5px;color:var(--muted);}
+
+/* Filter */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center;}
+.chip{
+  font-size:13.5px;padding:7px 15px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);
+  transition:.2s;user-select:none;
+}
+.chip:hover{color:var(--text);}
+.chip.active{background:rgba(90,209,230,.16);border-color:rgba(90,209,230,.5);color:var(--cyan);font-weight:600;}
+#searchInput{
+  flex:1 1 200px;min-width:160px;padding:9px 14px;border-radius:10px;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);
+  font-size:14px;outline:none;font-family:inherit;
+}
+#searchInput:focus{border-color:rgba(90,209,230,.55);}
+#searchInput::placeholder{color:#6b7a95;}
+.grid-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.item{
+  border:1px solid var(--line);border-radius:14px;padding:18px;
+  background:rgba(255,255,255,.025);transition:.2s;
+}
+.item:hover{background:rgba(90,209,230,.06);border-color:rgba(90,209,230,.3);}
+.item .badge{
+  display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:6px;
+  background:rgba(255,122,156,.14);color:var(--pink);margin-bottom:9px;
+}
+.item h4{font-size:15px;margin:0 0 6px;font-weight:650;}
+.item p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.66;}
+.empty{color:var(--muted);font-size:14px;padding:22px 0;display:none;}
+
+/* FAQ */
+.faq{display:grid;gap:12px;}
+details{
+  border:1px solid var(--line);border-radius:13px;padding:16px 20px;
+  background:rgba(255,255,255,.025);transition:.2s;
+}
+details[open]{border-color:rgba(90,209,230,.35);background:rgba(90,209,230,.05);}
+summary{cursor:pointer;font-size:15px;font-weight:600;list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";float:right;color:var(--cyan);font-weight:400;}
+details[open] summary::after{content:"–";}
+details p{margin:12px 0 0;font-size:14px;color:var(--muted);line-height:1.8;}
+
+/* Download */
+.dl-box{
+  display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
+  border:1px solid rgba(90,209,230,.28);border-radius:var(--radius);
+  background:linear-gradient(120deg,rgba(90,209,230,.10),rgba(255,122,156,.07));
+  padding:26px 28px;
+}
+.dl-box h3{margin:0 0 6px;font-size:18px;}
+.dl-box p{margin:0;font-size:14px;color:var(--muted);}
+.btn-download{
+  color:#07121b;background:linear-gradient(120deg,var(--cyan),#8ef0d3);
+  padding:12px 26px;border-radius:12px;font-weight:700;font-size:14.5px;
+  pointer-events:none;opacity:.9;border:none;
+}
+
+/* Footer */
+footer.site{
+  margin-top:26px;border-top:1px solid var(--line);
+  padding:34px 0 30px;background:rgba(9,13,24,.7);
+}
+.foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;}
+.foot-brand{max-width:30em;}
+.foot-brand .brand-name{margin-bottom:8px;}
+.foot-brand p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.8;}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap;}
+.foot-col h4{font-size:13.5px;margin:0 0 10px;color:var(--text);}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);padding:3px 0;transition:.2s;}
+.foot-col a:hover{color:var(--cyan);}
+.copyright{
+  margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:#6b7a95;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+@media(max-width:900px){
+  .hero-grid,.split{grid-template-columns:1fr;}
+  .cards,.grid-list{grid-template-columns:1fr 1fr;}
+  .hero-art{order:-1;}
+}
+@media(max-width:640px){
+  .nav-inner{padding:12px 0;}
+  nav.main{gap:2px;order:3;width:100%;justify-content:flex-start;}
+  nav.main a{padding:6px 10px;font-size:13.5px;}
+  .hero{padding:38px 0 28px;}
+  .hero-art{padding:14px;}
+  .cards,.grid-list{grid-template-columns:1fr;}
+  section{padding:34px 0;}
+  .panel{padding:20px;}
+  .dl-box{padding:22px;}
+  .foot-links{gap:26px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="91次元官网 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="8.4" stroke="#5ad1e6" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="3" fill="#ff7a9c"/>
+          <path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="#5ad1e6" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">91次元<span>官网</span></span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#channels">内容分区</a>
+      <a href="#flow">访问路径</a>
+      <a href="#library">资源索引</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#library">进入内容索引</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">SECONDARY DIMENSION ENTRY</span>
+        <h1>91次元官网</h1>
+        <p class="lead">91次元官网是一个围绕二次元内容聚合与入口导航的站点首页。这里把分区结构、访问路径与资源索引放在同一页内，访客不必逐层翻找，就能判断自己该走哪一条入口，再决定下一步操作。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#library">查看资源索引
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#channels">了解内容分区</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>4</b><span>内容分区</span></div>
+          <div class="stat"><b>9</b><span>索引条目</span></div>
+          <div class="stat"><b>1</b><span>整页入口</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5ad1e6" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#ff7a9c" stop-opacity=".2"/>
+            </linearGradient>
+            <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#5ad1e6" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#5ad1e6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="210" cy="150" r="128" fill="url(#g2)"/>
+          <circle cx="210" cy="150" r="104" fill="none" stroke="url(#g1)" stroke-width="1.4"/>
+          <circle cx="210" cy="150" r="76" fill="none" stroke="url(#g1)" stroke-width="1.2" stroke-dasharray="4 7"/>
+          <circle cx="210" cy="150" r="30" fill="none" stroke="#5ad1e6" stroke-width="1.8"/>
+          <circle cx="210" cy="150" r="9" fill="#ff7a9c"/>
+          <circle cx="210" cy="46" r="5.5" fill="#5ad1e6"/>
+          <circle cx="314" cy="150" r="5.5" fill="#ffc37a"/>
+          <circle cx="210" cy="254" r="5.5" fill="#ff7a9c"/>
+          <circle cx="106" cy="150" r="5.5" fill="#8ef0d3"/>
+          <path d="M210 46 L314 150" stroke="rgba(120,160,220,.2)" stroke-width="1"/>
+          <path d="M314 150 L210 254" stroke="rgba(120,160,220,.2)" stroke-width="1"/>
+          <path d="M210 254 L106 150" stroke="rgba(120,160,220,.2)" stroke-width="1"/>
+          <path d="M106 150 L210 46" stroke="rgba(120,160,220,.2)" stroke-width="1"/>
+          <text x="210" y="155" text-anchor="middle" font-size="11" fill="#9fe8f5" font-family="sans-serif" letter-spacing="2">CORE</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channels -->
+  <section id="channels">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">CONTENT CHANNELS</div>
+        <h2>四个内容分区，各自解决一类访问需求</h2>
+        <p>91次元官网把内容按用途分开摆放：找方向、看路径、查条目、问问题，四类需求对应四个分区，避免入口堆在一起难以分辨。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="8" height="7" rx="2" stroke="#5ad1e6" stroke-width="1.7"/><rect x="13" y="4" width="8" height="7" rx="2" stroke="#ff7a9c" stroke-width="1.7"/><rect x="3" y="13" width="18" height="7" rx="2" stroke="#ffc37a" stroke-width="1.7"/></svg>
+          </div>
+          <h3>分区导航</h3>
+          <p>按内容类型划出的四个栏目，说明每个栏目放什么、适合哪类访客先看。新访客从分区导航入手，能最快建立对91次元官网整体结构的印象。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 18c3-9 13-9 16 0" stroke="#5ad1e6" stroke-width="1.7" stroke-linecap="round"/><circle cx="4" cy="18" r="2" fill="#ff7a9c"/><circle cx="20" cy="18" r="2" fill="#ffc37a"/></svg>
+          </div>
+          <h3>访问路径</h3>
+          <p>把从首页到具体条目的步骤按顺序写清楚，标注每一步的判断依据。路径说明只描述页面内可完成的操作，不涉及页面之外的流程。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#5ad1e6" stroke-width="1.7" stroke-linecap="round"/><circle cx="19" cy="18" r="2.4" fill="#ff7a9c"/></svg>
+          </div>
+          <h3>资源索引</h3>
+          <p>九条带标签的索引条目，支持按标签筛选和关键词检索。筛选逻辑在页面内直接运行，结果即时显示，方便确认自己要找的方向是否已被收录。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#5ad1e6" stroke-width="1.7"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .9-1 1.6" stroke="#ffc37a" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16.6" r="1" fill="#ff7a9c"/></svg>
+          </div>
+          <h3>常见问题</h3>
+          <p>汇总访客最常提出的几类疑问，包括内容范围、索引更新方式与入口行为，回答只陈述当前页面已经做到的事，不作超出范围承诺。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5 20 8v8l-8 4.5L4 16V8z" stroke="#5ad1e6" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 12v8.5M12 12 4 8M12 12l8-4" stroke="#ff7a9c" stroke-width="1.5"/></svg>
+          </div>
+          <h3>视觉语言</h3>
+          <p>深色底配合青与粉两色点缀，来自二次元内容的常见配色习惯。图标与插画全部内嵌在页面内，不依赖外部图片资源即可正常显示。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2.5" stroke="#5ad1e6" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#ffc37a" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>阅读节奏</h3>
+          <p>首屏给出主题与主入口，主体按访问顺序逐层展开，末段收束到索引与问题解答。整页按一屏一主题的方式排布，移动端同样保持这个顺序。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">ACCESS FLOW</div>
+        <h2>从打开到定位，三步走完</h2>
+        <p>访问91次元官网的多数人只有一个目的：尽快确认内容在哪、怎么进去。下面把这条路径拆成三步，每一步都给出可判断的依据。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>页面内的访问顺序</h3>
+          <ul class="timeline">
+            <li>
+              <b>第一步：读首屏，确认主题</b>
+              <span>首屏集中交代站点定位与内容范围，标题、导语与两个入口按钮同时给出。读完后应能判断这个页面是否对应自己想要的方向。</span>
+            </li>
+            <li>
+              <b>第二步：看分区，选定栏目</b>
+              <span>四个分区按用途划分。找结构看分区导航，找步骤看访问路径，找具体条目看资源索引，遇到疑问看常见问题。</span>
+            </li>
+            <li>
+              <b>第三步：用索引，缩小范围</b>
+              <span>资源索引支持标签筛选与关键词检索，两者可叠加使用。输入关键词时结果实时变化，无匹配会显示提示而不是空白。</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>选择入口时的判断依据</h3>
+          <p style="font-size:14px;color:var(--muted);margin:0 0 14px;">不同访客的起点不同，入口选择也随之变化。以下三种情形覆盖了页面内可见的主要访问方式。</p>
+          <div class="item" style="margin-bottom:12px;">
+            <span class="badge">首次访问</span>
+            <h4>先看分区导航</h4>
+            <p>对91次元官网还不熟悉时，分区导航用最短篇幅说明每个栏目放什么，适合先建立整体印象，再决定看哪一块。</p>
+          </div>
+          <div class="item" style="margin-bottom:12px;">
+            <span class="badge">目标明确</span>
+            <h4>直接用资源索引</h4>
+            <p>已经知道自己要哪一类内容，在检索框输入关键词，或点选对应标签，索引条目会立即收窄到匹配结果。</p>
+          </div>
+          <div class="item">
+            <span class="badge">遇到疑问</span>
+            <h4>翻到常见问题</h4>
+            <p>关于内容范围、索引更新与入口行为的疑问，多数能在常见问题里找到对应说明，无需再四处查找。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Library -->
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">RESOURCE INDEX</div>
+        <h2>资源索引：按标签筛选或直接检索</h2>
+        <p>下列条目按内容方向分类，每条都标注所属标签与一句话说明。筛选按钮与检索框可同时使用，结果会实时更新，帮助快速判断方向是否已覆盖。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="标签筛选">
+        <button class="chip active" data-tag="all" type="button">全部</button>
+        <button class="chip" data-tag="动画" type="button">动画</button>
+        <button class="chip" data-tag="漫画" type="button">漫画</button>
+        <button class="chip" data-tag="周边" type="button">周边</button>
+        <button class="chip" data-tag="工具" type="button">工具</button>
+        <input id="searchInput" type="search" placeholder="输入关键词检索索引…" aria-label="检索索引条目">
+      </div>
+      <div class="grid-list" id="gridList">
+        <article class="item" data-tag="动画">
+          <span class="badge">动画</span>
+          <h4>新番速览</h4>
+          <p>按放送周期归纳的动画条目，说明季别与题材标签，方便判断是否属于自己关注的类型。</p>
+        </article>
+        <article class="item" data-tag="动画">
+          <span class="badge">动画</span>
+          <h4>剧场版归档</h4>
+          <p>整理剧场版动画的条目信息，包含系列归属与上映年份，适合按系列回看时作参照。</p>
+        </article>
+        <article class="item" data-tag="漫画">
+          <span class="badge">漫画</span>
+          <h4>连载目录</h4>
+          <p>按连载状态区分的漫画条目，标出连载中与已完结两类，便于按更新情况挑选阅读方向。</p>
+        </article>
+        <article class="item" data-tag="漫画">
+          <span class="badge">漫画</span>
+          <h4>短篇合集</h4>
+          <p>收录篇幅较短的漫画条目，说明题材与作者信息，适合碎片时间阅读的场景。</p>
+        </article>
+        <article class="item" data-tag="周边">
+          <span class="badge">周边</span>
+          <h4>手办条目</h4>
+          <p>按作品系列整理的手办条目，注明比例与版本区别，帮助分辨同名产品的不同批次。</p>
+        </article>
+        <article class="item" data-tag="周边">
+          <span class="badge">周边</span>
+          <h4>联名记录</h4>
+          <p>记录联名周边的合作方与发布年份，作为同系列产品追溯的索引依据。</p>
+        </article>
+        <article class="item" data-tag="工具">
+          <span class="badge">工具</span>
+          <h4>检索技巧</h4>
+          <p>说明本页检索框的匹配方式与标签叠加逻辑，给出组合使用时的结果表现。</p>
+        </article>
+        <article class="item" data-tag="工具">
+          <span class="badge">工具</span>
+          <h4>浏览设置</h4>
+          <p>介绍页面在桌面与移动端的排布差异，说明小屏下导航折叠后的阅读顺序。</p>
+        </article>
+        <article class="item" data-tag="动画">
+          <span class="badge">动画</span>
+          <h4>声优索引</h4>
+          <p>按作品归集的声优参与记录，标注角色与作品年份，用于按人名反向查找作品。</p>
+        </article>
+      </div>
+      <p class="empty" id="emptyTip">没有匹配的条目，请更换关键词或切换标签。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">QUESTIONS</div>
+        <h2>常见问题</h2>
+        <p>下面四个问题覆盖了访客在91次元官网首页最常提出的疑问，回答限定在页面当前实际具备的功能范围内。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>91次元官网首页主要提供什么？</summary>
+          <p>首页承担入口与导航的职责，包含主题介绍、四个内容分区、三步访问路径、可筛选的资源索引以及常见问题。它不承担具体内容的完整展示，而是帮助访客判断方向、找到对应栏目后再继续。</p>
+        </details>
+        <details>
+          <summary>资源索引里的筛选怎么用？</summary>
+          <p>先点选一个标签，索引会只保留该标签下的条目；再在检索框输入关键词，两个条件同时生效。清空检索框或重新点「全部」即可回到完整列表。整个过程在页面内完成，不需要跳转。</p>
+        </details>
+        <details>
+          <summary>移动端打开时排版会变吗？</summary>
+          <p>会。小屏下首屏改为单列，主题文字优先显示，装饰插画移到文字之后；导航换行排列，卡片与索引条目改为单列纵向排列，字号与行距同步调整，保持可读性。</p>
+        </details>
+        <details>
+          <summary>页面上的下载按钮现在能用吗？</summary>
+          <p>下载入口目前处于占位状态，按钮显示为不可点击，用于后续替换真实地址。页面其余入口与检索功能均可正常使用。</p>
+        </details>
+      </div>
+
+      <div class="dl-box" style="margin-top:28px;">
+        <div>
+          <h3>页面资源包</h3>
+          <p>包含本页的样式与图标资源说明，供后续替换真实下载地址时使用。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand-name">91次元<span>官网</span></div>
+        <p>91次元官网首页，围绕二次元内容的分区导航、访问路径与资源索引展开，帮助访客用最短步骤确认方向并进入对应栏目。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面栏目</h4>
+          <a href="#channels">内容分区</a>
+          <a href="#flow">访问路径</a>
+          <a href="#library">资源索引</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="foot-col">
+          <h4>索引标签</h4>
+          <a href="#library">动画</a>
+          <a href="#library">漫画</a>
+          <a href="#library">周边</a>
+          <a href="#library">工具</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 91次元官网 · 页面内容仅作导航与索引说明</span>
+      <span>内容以页面实际展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var items = document.querySelectorAll('#gridList .item');
+  var input = document.getElementById('searchInput');
+  var emptyTip = document.getElementById('emptyTip');
+  var activeTag = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var visible = 0;
+    items.forEach(function(el){
+      var tag = el.getAttribute('data-tag');
+      var text = el.textContent.toLowerCase();
+      var okTag = activeTag === 'all' || tag === activeTag;
+      var okKw = !kw || text.indexOf(kw) !== -1;
+      var show = okTag && okKw;
+      el.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    emptyTip.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeTag = btn.getAttribute('data-tag');
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+  </html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91大赛吃瓜爆料-热门爆料合集_吃瓜现场与网友热议看点</title>
+<meta name="description" content="91大赛吃瓜爆料首页，汇总热门爆料合集、吃瓜现场与网友热议看点，按话题梳理来龙去脉，方便快速浏览当下讨论焦点与公开流传的说法。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151826'/%3E%3Ccircle cx='32' cy='30' r='13' fill='%23ff7a45'/%3E%3Cpath d='M32 12v-6M32 54v-6M10 30H4M60 30h-6M17 15l-4-4M51 49l-4-4M47 15l4-4M13 49l4-4' stroke='%23ffd166' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0f1119;
+    --bg-soft:#161a26;
+    --panel:#1b2030;
+    --panel-2:#222838;
+    --line:#2c3346;
+    --text:#e9ecf5;
+    --muted:#9aa3ba;
+    --accent:#ff7a45;
+    --accent-2:#ffd166;
+    --accent-soft:rgba(255,122,69,.14);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 420px at 82% -8%, rgba(255,122,69,.16), transparent 70%),
+      radial-gradient(700px 380px at 0% 4%, rgba(255,209,102,.08), transparent 70%),
+      var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* 页头 */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,17,25,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:24px;padding:12px 0;}
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .logo svg{width:36px;height:36px;flex-shrink:0;}
+  .logo-text{
+    font-weight:800;font-size:18px;letter-spacing:.5px;
+    background:linear-gradient(92deg,var(--accent-2),var(--accent));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    white-space:nowrap;
+  }
+  nav.main{margin-left:auto;}
+  nav.main ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+  nav.main a{
+    display:block;padding:7px 13px;border-radius:999px;
+    font-size:14.5px;color:var(--muted);transition:.2s;
+  }
+  nav.main a:hover{color:var(--text);background:var(--panel-2);}
+  .nav-cta{
+    flex-shrink:0;padding:9px 18px;border-radius:999px;
+    background:linear-gradient(95deg,var(--accent),#ff9a5c);
+    color:#1a1005;font-weight:700;font-size:14px;
+    box-shadow:0 6px 20px rgba(255,122,69,.28);
+    transition:.2s;white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 9px 26px rgba(255,122,69,.38);}
+
+  /* 首屏 */
+  .hero{padding:54px 0 40px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 14px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent-2);
+    font-size:13px;font-weight:600;letter-spacing:.4px;
+    border:1px solid rgba(255,122,69,.28);
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,122,69,.2);}
+  h1{
+    font-size:clamp(30px,4.6vw,50px);
+    line-height:1.22;margin:20px 0 16px;font-weight:900;letter-spacing:.5px;
+  }
+  h1 .hl{
+    background:linear-gradient(94deg,var(--accent-2) 10%,var(--accent) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-lead{color:var(--muted);font-size:16px;max-width:560px;margin:0 0 26px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn-primary{
+    padding:12px 26px;border-radius:999px;font-weight:700;font-size:15px;
+    background:linear-gradient(95deg,var(--accent),#ff9a5c);color:#1a1005;
+    box-shadow:0 8px 24px rgba(255,122,69,.3);transition:.2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    padding:12px 24px;border-radius:999px;font-size:15px;font-weight:600;
+    border:1px solid var(--line);color:var(--muted);transition:.2s;
+  }
+  .btn-ghost:hover{color:var(--text);border-color:var(--accent);}
+
+  .hero-card{
+    background:linear-gradient(160deg,var(--panel),var(--bg-soft));
+    border:1px solid var(--line);border-radius:22px;
+    padding:22px;position:relative;
+  }
+  .hero-card h2{font-size:15px;margin:0 0 4px;letter-spacing:.5px;}
+  .hero-card p.sub{margin:0 0 16px;font-size:12.5px;color:var(--muted);}
+  .heat-list{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .heat-list li{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;}
+  .rank{
+    flex-shrink:0;width:22px;height:22px;border-radius:7px;
+    display:grid;place-items:center;font-size:12px;font-weight:800;
+    background:var(--panel-2);color:var(--muted);
+  }
+  .heat-list li:nth-child(1) .rank{background:var(--accent);color:#1a1005;}
+  .heat-list li:nth-child(2) .rank{background:rgba(255,209,102,.85);color:#1a1005;}
+  .heat-list li:nth-child(3) .rank{background:rgba(255,122,69,.35);color:var(--accent-2);}
+  .heat-list .t{color:#d6dbe9;}
+
+  /* 通用区块 */
+  section{padding:44px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(21px,2.6vw,27px);margin:0 0 6px;font-weight:800;letter-spacing:.4px;}
+  .sec-head p{margin:0;color:var(--muted);font-size:14px;}
+  .sec-line{width:44px;height:4px;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-bottom:12px;}
+
+  /* 爆料卡片 */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;transition:.22s;display:flex;flex-direction:column;gap:10px;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,122,69,.5);background:var(--panel-2);}
+  .card .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted);}
+  .pill{padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-2);font-weight:600;}
+  .card h3{margin:0;font-size:16.5px;line-height:1.5;}
+  .card p{margin:0;font-size:13.5px;color:var(--muted);}
+  .card .more{margin-top:auto;font-size:13px;color:var(--accent-2);font-weight:600;}
+
+  /* 现场时间线 */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .panel{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px;
+  }
+  .panel h3{margin:0 0 6px;font-size:17px;}
+  .panel .desc{margin:0 0 18px;font-size:13.5px;color:var(--muted);}
+  .timeline{list-style:none;margin:0;padding:0;position:relative;}
+  .timeline::before{
+    content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,var(--accent),transparent);
+  }
+  .timeline li{position:relative;padding:0 0 16px 28px;font-size:13.8px;}
+  .timeline li::before{
+    content:"";position:absolute;left:2px;top:7px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent);
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline .step{display:block;color:var(--accent-2);font-weight:700;font-size:12.5px;letter-spacing:.4px;margin-bottom:2px;}
+
+  .quote-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .quote-list li{
+    background:var(--bg-soft);border-left:3px solid var(--accent);
+    border-radius:10px;padding:12px 15px;font-size:13.6px;color:#cfd5e6;
+  }
+  .quote-list .who{display:block;margin-top:6px;font-size:12px;color:var(--muted);}
+
+  /* 话题索引 */
+  .topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .topic{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:13px;
+    padding:16px;transition:.2s;
+  }
+  .topic:hover{border-color:var(--accent);background:var(--panel-2);}
+  .topic .num{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:1px;}
+  .topic h4{margin:6px 0 5px;font-size:15px;}
+  .topic p{margin:0;font-size:12.8px;color:var(--muted);}
+
+  /* 声明 */
+  .notice{
+    background:linear-gradient(140deg,rgba(255,122,69,.1),rgba(255,209,102,.05));
+    border:1px solid rgba(255,122,69,.28);border-radius:var(--radius);
+    padding:24px 26px;
+  }
+  .notice h3{margin:0 0 10px;font-size:17px;}
+  .notice p{margin:0;font-size:14px;color:#c7cddd;}
+  .notice p + p{margin-top:10px;}
+
+  /* 订阅区 */
+  .cta-band{
+    background:linear-gradient(120deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:20px;padding:32px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+  }
+  .cta-band h2{margin:0 0 8px;font-size:clamp(20px,2.5vw,25px);}
+  .cta-band p{margin:0;color:var(--muted);font-size:14px;}
+  .search-box{display:flex;gap:10px;flex-wrap:wrap;}
+  .search-box input{
+    flex:1;min-width:180px;padding:12px 16px;border-radius:999px;
+    border:1px solid var(--line);background:var(--bg);color:var(--text);
+    font-size:14px;font-family:inherit;outline:none;transition:.2s;
+  }
+  .search-box input:focus{border-color:var(--accent);}
+  .search-box button{
+    padding:12px 24px;border-radius:999px;border:0;cursor:pointer;
+    background:linear-gradient(95deg,var(--accent),#ff9a5c);color:#1a1005;
+    font-weight:700;font-size:14px;font-family:inherit;transition:.2s;
+  }
+  .search-box button:hover{transform:translateY(-1px);}
+  .search-hint{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .search-hint strong{color:var(--accent-2);}
+
+  .download-row{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap;}
+  .dl-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:999px;
+    background:transparent;border:1px solid var(--accent);
+    color:var(--accent-2);font-weight:700;font-size:14px;
+    pointer-events:none;opacity:.85;
+  }
+  .dl-note{font-size:12.5px;color:var(--muted);}
+
+  /* 页尾 */
+  footer.site{
+    border-top:1px solid var(--line);margin-top:20px;
+    padding:34px 0 40px;background:var(--bg-soft);
+  }
+  .foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+  .foot-brand{max-width:360px;}
+  .foot-brand .logo{margin-bottom:10px;}
+  .foot-brand p{margin:0;font-size:13px;color:var(--muted);}
+  .foot-links{display:flex;gap:44px;flex-wrap:wrap;}
+  .foot-links h5{margin:0 0 10px;font-size:13px;color:var(--text);letter-spacing:.5px;}
+  .foot-links ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;}
+  .foot-links a{font-size:13px;color:var(--muted);transition:.2s;}
+  .foot-links a:hover{color:var(--accent-2);}
+  .copy{
+    margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+
+  @media (max-width:940px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .topic-grid{grid-template-columns:repeat(2,1fr);}
+    .cta-band{grid-template-columns:1fr;}
+    .nav-inner{flex-wrap:wrap;gap:12px;}
+    nav.main{order:3;margin-left:0;width:100%;}
+    nav.main ul{gap:2px;}
+    .nav-cta{margin-left:auto;}
+  }
+  @media (max-width:600px){
+    .hero{padding:36px 0 26px;}
+    section{padding:32px 0;}
+    .cards{grid-template-columns:1fr;}
+    .topic-grid{grid-template-columns:1fr;}
+    .panel{padding:18px;}
+    .cta-band{padding:22px;}
+    nav.main a{padding:6px 10px;font-size:13.5px;}
+    .logo-text{font-size:16px;}
+    h1{letter-spacing:.3px;}
+    .foot-links{gap:28px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="91大赛吃瓜爆料 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2030"/>
+        <circle cx="32" cy="30" r="12" fill="#ff7a45"/>
+        <path d="M32 12v-6M32 54v-6M10 30H4M60 30h-6M17 15l-4-4M51 49l-4-4M47 15l4-4M13 49l4-4" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">91大赛吃瓜爆料</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#feed">爆料合集</a></li>
+        <li><a href="#live">吃瓜现场</a></li>
+        <li><a href="#voices">网友热议</a></li>
+        <li><a href="#topics">话题索引</a></li>
+        <li><a href="#search">站内搜索</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#feed">看今日热点</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><span class="dot"></span>热点吃瓜 · 持续更新</span>
+        <h1>91大赛吃瓜爆料</h1>
+        <p class="hero-lead">把散落在各个角落的讨论串起来：谁在说、说了什么、哪些只是传闻。这里汇总当下热门爆料与吃瓜现场，按话题梳理脉络，让你先看清全貌再判断。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#feed">进入爆料合集</a>
+          <a class="btn-ghost" href="#live">看吃瓜现场</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="当前热议榜">
+        <h2>当前热议榜</h2>
+        <p class="sub">榜单按站内讨论热度排列，仅反映关注度</p>
+        <ol class="heat-list">
+          <li><span class="rank">1</span><span class="t">某赛事判罚争议的后续说法</span></li>
+          <li><span class="rank">2</span><span class="t">选手账号风波的多方回应</span></li>
+          <li><span class="rank">3</span><span class="t">赛程调整引发的赛制讨论</span></li>
+          <li><span class="rank">4</span><span class="t">场外花絮：现场视频被反复剪辑</span></li>
+          <li><span class="rank">5</span><span class="t">旧图新传，时间线需要核对</span></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 爆料合集 -->
+  <section id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-line"></div>
+          <h2>爆料合集</h2>
+          <p>每个条目标注了话题归属与可信度提示，点开前先扫一眼标签。</p>
+        </div>
+        <a class="btn-ghost" href="#topics">按话题浏览</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="pill">判罚争议</span><span>讨论中</span></div>
+          <h3>判罚结果出来后，两派说法各站一边</h3>
+          <p>一方认为规则执行没问题，另一方认为尺度前后不一。争议点集中在同一类型动作在不同局里的处理差异。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill">账号风波</span><span>多方回应</span></div>
+          <h3>选手小号被扒，本人给出解释</h3>
+          <p>流传的截图时间不一，部分内容无法确认来源。当事人回应称账号早已停用，相关说法仍在核实。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill">赛程调整</span><span>官方口径</span></div>
+          <h3>赛程临时改动，观众追问原因</h3>
+          <p>官方给出的说明是场地与转播协调，评论区则出现多种猜测。目前没有进一步公告。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill">现场花絮</span><span>视频流传</span></div>
+          <h3>后台片段被剪成多个版本</h3>
+          <p>同一段视频存在不同剪辑，前后语境被省略。建议以完整版本为参照再讨论。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill">旧料重提</span><span>需核对</span></div>
+          <h3>几年前的旧图又被翻出来</h3>
+          <p>图片本身没有新信息，但被配上新的叙述重新传播。时间线核对后，部分说法与事实对不上。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="pill">解说口误</span><span>已澄清</span></div>
+          <h3>一句口误被截出来放大</h3>
+          <p>解说在后续节目里做了澄清，完整语境与截取片段意思有差别，讨论热度已回落。</p>
+          <span class="more">查看脉络 →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 吃瓜现场 + 网友热议 -->
+  <section id="live">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-line"></div>
+          <h2>吃瓜现场</h2>
+          <p>一个话题从出现到发酵通常有几段路，按顺序读更容易看懂。</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>话题发酵的常见路径</h3>
+          <p class="desc">以下为观察到的普遍节奏，具体事件各有差异。</p>
+          <ol class="timeline">
+            <li><span class="step">第一步 · 片段流出</span>短视频或截图先在小范围传播，信息不完整，情绪先行。</li>
+            <li><span class="step">第二步 · 多方补充</span>有人贴出更长时间线，也有人给出相反证据，讨论开始分叉。</li>
+            <li><span class="step">第三步 · 当事人回应</span>回应往往只解释一部分，剩下的疑问继续被追问。</li>
+            <li><span class="step">第四步 · 热度回落</span>没有新证据时讨论自然降温，旧料可能过段时间再被翻出。</li>
+          </ol>
+        </div>
+        <div class="panel" id="voices">
+          <h3>网友热议</h3>
+          <p class="desc">评论区里常见的几种声音，代表了不同的关注角度。</p>
+          <ul class="quote-list">
+            <li>“先把完整视频看完再下结论，剪辑版真的容易带偏。”
+              <span class="who">—— 关注证据完整性的读者</span></li>
+            <li>“规则写在哪儿就去哪儿看，别只听转述。”
+              <span class="who">—— 偏向查证规则的读者</span></li>
+            <li>“吃瓜可以，别把人往死里按，很多事还没定论。”
+              <span class="who">—— 提醒理性讨论的读者</span></li>
+            <li>“官方公告太简短了，多写两句也不至于猜来猜去。”
+              <span class="who">—— 希望信息更透明的读者</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 话题索引 -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-line"></div>
+          <h2>话题索引</h2>
+          <p>按类型归档，方便回头找某个具体讨论。</p>
+        </div>
+      </div>
+      <div class="topic-grid">
+        <a class="topic" href="#feed">
+          <span class="num">01</span>
+          <h4>判罚与规则</h4>
+          <p>尺度是否一致、规则如何表述，是这类讨论的核心。</p>
+        </a>
+        <a class="topic" href="#feed">
+          <span class="num">02</span>
+          <h4>选手与账号</h4>
+          <p>涉及个人言行的爆料，来源真伪往往难以立刻确认。</p>
+        </a>
+        <a class="topic" href="#feed">
+          <span class="num">03</span>
+          <h4>赛程与公告</h4>
+          <p>时间调整、临时变更，官方说明是主要参照。</p>
+        </a>
+        <a class="topic" href="#feed">
+          <span class="num">04</span>
+          <h4>视频与截图</h4>
+          <p>剪辑版本多，完整素材比片段更有参考价值。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 声明 -->
+  <section>
+    <div class="wrap">
+      <div class="notice">
+        <h3>关于内容的几点说明</h3>
+        <p>本站汇总的是公开流传的说法与讨论，不代表已经证实的事实。标注“讨论中”“需核对”的条目，说明相关信息仍有争议或缺少完整来源。</p>
+        <p>看到截图、录屏和转述时，建议先确认原始出处与完整语境。对涉及个人的内容，请保持克制，避免在信息不全时做出定论。91大赛吃瓜爆料只做话题梳理，不对未经证实的说法背书。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搜索与订阅 -->
+  <section id="search">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>找你想看的那一条</h2>
+          <p>输入话题关键词，比如“判罚”“账号”“赛程”，快速定位到对应条目。</p>
+          <div class="download-row">
+            <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+              下载
+            </a>
+            <span class="dl-note">话题速览卡片，便于离线回看</span>
+          </div>
+        </div>
+        <div>
+          <form class="search-box" role="search" onsubmit="return doSearch(event)">
+            <label class="sr-only" for="q">搜索话题关键词</label>
+            <input id="q" type="search" placeholder="输入话题关键词…" autocomplete="off">
+            <button type="submit">搜索</button>
+          </form>
+          <p class="search-hint" id="searchHint">试试 <strong>判罚</strong>、<strong>账号</strong>、<strong>赛程</strong> 或 <strong>截图</strong>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#222838"/>
+            <circle cx="32" cy="30" r="12" fill="#ff7a45"/>
+            <path d="M32 12v-6M32 54v-6M10 30H4M60 30h-6" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-text">91大赛吃瓜爆料</span>
+        </div>
+        <p>梳理热门爆料与吃瓜现场，标注可信度提示，帮助读者在信息不全时保持判断。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h5>内容</h5>
+          <ul>
+            <li><a href="#feed">爆料合集</a></li>
+            <li><a href="#live">吃瓜现场</a></li>
+            <li><a href="#voices">网友热议</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>浏览</h5>
+          <ul>
+            <li><a href="#topics">话题索引</a></li>
+            <li><a href="#search">站内搜索</a></li>
+            <li><a href="#top">回到顶部</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>说明</h5>
+          <ul>
+            <li><a href="#search">内容声明</a></li>
+            <li><a href="#feed">可信度标注</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>91大赛吃瓜爆料 · 话题梳理与讨论汇总</span>
+      <span>内容以公开讨论为参照，具体事实以原始来源为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function doSearch(e){
+    e.preventDefault();
+    var q = document.getElementById('q').value.trim();
+    var hint = document.getElementById('searchHint');
+    var keys = ['判罚','账号','赛程','截图','视频','回应','规则','公告','花絮','旧料'];
+    if(!q){
+      hint.innerHTML = '请先输入一个关键词，例如 <strong>判罚</strong>。';
+      return false;
+    }
+    var hit = keys.filter(function(k){ return q.indexOf(k) > -1 || k.indexOf(q) > -1; });
+    if(hit.length){
+      hint.innerHTML = '已匹配到相关话题：<strong>' + hit.join('、') + '</strong>，可在上方「爆料合集」中查看对应条目。';
+    }else{
+      hint.innerHTML = '暂未匹配到「<strong>' + q.replace(/[<>&]/g,'') + '</strong>」的现成条目，可先从话题索引浏览。';
+    }
+    return false;
+  }
+</script>
+</body>
+</html>
